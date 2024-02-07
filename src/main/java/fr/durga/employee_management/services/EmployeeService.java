@@ -4,6 +4,7 @@ import fr.durga.employee_management.datamodel.Employee;
 import fr.durga.employee_management.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -21,8 +22,8 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
-    public void deleteEmployee(Employee employee){
-        employeeRepository.delete(employee);
+    public void deleteEmployee(@RequestBody int e_id){
+        employeeRepository.deleteById(e_id);
     }
 
     public void updateEmployee(int e_id){
