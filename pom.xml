@@ -44,7 +44,15 @@
 			<version>8.0.33</version>
 		</dependency>
 
-<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;-->
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-webmvc -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-webmvc</artifactId>
+			<version>4.2.3</version>
+		</dependency>
+
+
+		<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;-->
 <!--		<dependency>-->
 <!--			<groupId>org.slf4j</groupId>-->
 <!--			<artifactId>slf4j-api</artifactId>-->

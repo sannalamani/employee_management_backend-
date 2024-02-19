@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +38,24 @@ public class EmployeeController {
         System.out.println(employee);
         employeeService.createEmployee(employee);
         return new ResponseEntity<>(new APIResponse(true,"employee added"),HttpStatus.CREATED);
+    }
+
+
+
+    @DeleteMapping("{e_id}")
+    public ResponseEntity<APIResponse> deleteEmployee(@PathVariable Integer e_id){
+
+
+        Optional<Employee> employee = employeeService.findEmployeeById(e_id);
+        if(employee.isPresent()) {
+
+            System.out.println(employee);
+            employeeService.deleteEmployee(e_id);
+
+            return new ResponseEntity<>(new APIResponse(true, "employee deleted"), HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(new APIResponse(false,"employee not found"),HttpStatus.OK);
     }
 
 
